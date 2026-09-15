@@ -301,5 +301,34 @@ h1, h2, h3, h4, h5, h6, figure {
         0 0 20px #ff6699;
     }
 }
+/* slideshow background */
 
+#fh5co-aside{
+    background-size: cover;
+    background-position: center;
+    transition: background-image 1.5s ease-in-out;
+    animation: zoomPhoto 8s infinite alternate;
+}
+
+
+@keyframes zoomPhoto{
+
+    from{
+        background-size: 100%;
+    }
+
+    to{
+        background-size: 110%;
+    }
+
+}
+
+
+/* chữ góc trái */
+
+#photo-title{
+
+    transition: opacity 1s ease;
+
+}
 /*# sourceMappingURL=style.css.map */
