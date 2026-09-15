@@ -96,11 +96,13 @@
 
         if (!parameters.inline) {
             return {
-                days: createCountdownElt(countdown, parameters, 'simply-days-section'),
-                hours: createCountdownElt(countdown, parameters, 'simply-hours-section'),
-                minutes: createCountdownElt(countdown, parameters, 'simply-minutes-section'),
-                seconds: createCountdownElt(countdown, parameters, 'simply-seconds-section')
-            };
+    years: createCountdownElt(countdown, parameters, 'simply-years-section'),
+    months: createCountdownElt(countdown, parameters, 'simply-months-section'),
+    days: createCountdownElt(countdown, parameters, 'simply-days-section'),
+    hours: createCountdownElt(countdown, parameters, 'simply-hours-section'),
+    minutes: createCountdownElt(countdown, parameters, 'simply-minutes-section'),
+    seconds: createCountdownElt(countdown, parameters, 'simply-seconds-section')
+};
         }
 
         spanTag = document.createElement('span');
@@ -143,10 +145,12 @@
             nowUtc,
             secondsLeft,
             secondsNui,
-            days,
-            hours,
-            minutes,
-            seconds,
+years,
+months,
+days,
+hours,
+minutes,
+seconds,
             cd = document.querySelectorAll(elt);
 
         targetTmpDate = new Date(
@@ -175,11 +179,13 @@
             var fullCountDown = createElements(parameters, countdown),
                 refresh;
 
-            refresh = function () {
-                var dayWord,
-                    hourWord,
-                    minuteWord,
-                    secondWord;
+           refresh = function () {
+    var yearWord,
+        monthWord,
+        dayWord,
+        hourWord,
+        minuteWord,
+        secondWord;
 
                 now = new Date();
                 if (parameters.enableUtc) {
@@ -219,10 +225,12 @@
 				//console.log(nuiyear, dtemp.getMonth(), dtemp.getDate()-1, dtemp.getHours());
 				
 				//maping
-				//mapping
-days = nuiyear;
-hours = dtemp.getMonth();
-minutes = dtemp.getDate() - 1;
+			
+years = nuiyear;
+months = dtemp.getMonth();
+days = dtemp.getDate()-1;
+hours = dtemp.getHours();
+minutes = dtemp.getMinutes();
 seconds = dtemp.getSeconds();
 
                 /*if (secondsNui > 0) {
@@ -246,6 +254,13 @@ seconds = dtemp.getSeconds();
                 }*/
 
                 if (parameters.plural) {
+					yearWord = years > 1
+    ? parameters.words.years + parameters.words.pluralLetter
+    : parameters.words.years;
+
+monthWord = months > 1
+    ? parameters.words.months + parameters.words.pluralLetter
+    : parameters.words.months;
                     dayWord = days > 1
                         ? parameters.words.days + parameters.words.pluralLetter
                         : parameters.words.days;
@@ -278,17 +293,23 @@ seconds = dtemp.getSeconds();
                         seconds + ' ' + secondWord + '.';
 
                 } else {
-                    fullCountDown.days.amount.textContent = (parameters.zeroPad && days.toString().length < 2 ? '0' : '') + days;
-                    fullCountDown.days.word.textContent = dayWord;
+                    fullCountDown.years.amount.textContent = years;
+fullCountDown.years.word.textContent = yearWord;
 
-                    fullCountDown.hours.amount.textContent = (parameters.zeroPad && hours.toString().length < 2 ? '0' : '') + hours;
-                    fullCountDown.hours.word.textContent = hourWord;
+fullCountDown.months.amount.textContent = months;
+fullCountDown.months.word.textContent = monthWord;
 
-                    fullCountDown.minutes.amount.textContent = (parameters.zeroPad && minutes.toString().length < 2 ? '0' : '') + minutes;
-                    fullCountDown.minutes.word.textContent = minuteWord;
+fullCountDown.days.amount.textContent = days;
+fullCountDown.days.word.textContent = dayWord;
 
-                    fullCountDown.seconds.amount.textContent = (parameters.zeroPad && seconds.toString().length < 2 ? '0' : '') + seconds;
-                    fullCountDown.seconds.word.textContent = secondWord;
+fullCountDown.hours.amount.textContent = hours;
+fullCountDown.hours.word.textContent = hourWord;
+
+fullCountDown.minutes.amount.textContent = minutes;
+fullCountDown.minutes.word.textContent = minuteWord;
+
+fullCountDown.seconds.amount.textContent = seconds;
+fullCountDown.seconds.word.textContent = secondWord;
                 }
             };
 
