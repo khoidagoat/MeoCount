@@ -87,12 +87,16 @@
 
 	var countDown = function() {
 
-		var d = new Date();
-		
-		simplyCountdown('.simply-countdown-one', NUI_DATE);
+    simplyCountdown('.simply-countdown-one', {
+        year: NUI_DATE.year,
+        month: NUI_DATE.month,
+        day: NUI_DATE.day,
+        hours: 0,
+        minutes: 0,
+        seconds: 0
+    });
 
-	};
-	
+};
 	
 	
 	$(function(){
