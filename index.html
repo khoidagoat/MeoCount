@@ -61,8 +61,7 @@
 	<body>
 	<div class="fh5co-loader"></div>
 
-	<aside id="fh5co-aside" role="sidebar" class="text-center"
-style="background-image: url(images/img1.jpg);">
+	<aside id="fh5co-aside" role="sidebar" class="text-center">
 
     <h1 id="fh5co-logo">
         <a id="photo-title">Bíp chụp lên Meo lúc sợ mèo</a>
@@ -174,6 +173,68 @@ function createHeart(){
 }
 
 setInterval(createHeart,800);
+</script>
+<script>
+
+const memories = [
+    {
+        img: "images/img_bg_1_gradient.jpg",
+        text: "Bíp chụp lên Meo lúc sợ mèo"
+    },
+
+    {
+        img: "images/anh1.jpg",
+        text: "Meo hoa quả sơn, đáng iu tht ❤️"
+    },
+
+    {
+        img: "images/anh2.jpg",
+        text: "Ảnh selfie đầu tiên Meo tui, lm tui dui quá tr"
+    },
+
+    {
+        img: "images/anh3.jpg",
+        text: "Meo i leo núi, nhìn cuti và mạnh mẽ thac hihi 💕"
+    },
+
+    {
+        img: "images/anh4.jpg",
+        text: "Bíp và Meo"
+    },
+
+    {
+        img: "images/anh5.jpg",
+        text: "Sờ mèo part 2 ❤️"
+    }
+];
+
+
+let index = 0;
+
+const aside = document.getElementById("fh5co-aside");
+const title = document.getElementById("photo-title");
+
+
+function changePhoto(){
+
+    index++;
+
+    if(index >= memories.length){
+        index = 0;
+    }
+
+
+    aside.style.backgroundImage =
+        `url(${memories[index].img})`;
+
+    title.innerHTML = memories[index].text;
+
+}
+
+
+setInterval(changePhoto,5000);
+
+
 </script>
 	</body>
 </html>
