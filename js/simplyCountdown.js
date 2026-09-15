@@ -222,7 +222,7 @@
 				days = nuiyear;
 				hours = dtemp.getMonth();
 				minutes = dtemp.getDate()-1;
-				seconds = dtemp.getHours();
+				seconds = dtemp.getMinutes();
 
                 /*if (secondsNui > 0) {
 					
@@ -286,8 +286,8 @@
                     fullCountDown.minutes.amount.textContent = (parameters.zeroPad && minutes.toString().length < 2 ? '0' : '') + minutes;
                     fullCountDown.minutes.word.textContent = minuteWord;
 
-                    /*fullCountDown.seconds.amount.textContent = (parameters.zeroPad && seconds.toString().length < 2 ? '0' : '') + seconds;
-                    fullCountDown.seconds.word.textContent = secondWord;*/
+                    fullCountDown.seconds.amount.textContent = (parameters.zeroPad && seconds.toString().length < 2 ? '0' : '') + seconds;
+                    fullCountDown.seconds.word.textContent = secondWord;
                 }
             };
 
