@@ -214,15 +214,16 @@
 				var timegap = now.getTime() - dtemp.getTime();
 				dtemp.setDate(1);
 				dtemp.setMonth(0);
-				dtemp.setTime(dtemp.getTime() + timegap);
+				dtemp.setTime(dtemp.getSeconds() + timegap);
 				
 				//console.log(nuiyear, dtemp.getMonth(), dtemp.getDate()-1, dtemp.getHours());
 				
 				//maping
-				days = nuiyear;
-				hours = dtemp.getMonth();
-				minutes = dtemp.getDate()-1;
-				seconds = dtemp.getMinutes();
+				//mapping
+days = nuiyear;
+hours = dtemp.getMonth();
+minutes = dtemp.getDate() - 1;
+seconds = dtemp.getSeconds();
 
                 /*if (secondsNui > 0) {
 					
