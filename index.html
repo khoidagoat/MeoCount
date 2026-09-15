@@ -40,22 +40,20 @@
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
 	<script>
-		var NUI_DATE = {
-			year: 2026,
-			month: 1,
-			day: 15
-		}
-		
+    var NUI_DATE = {
+        year: 2026,
+        month: 1,
+        day: 15
+    }
 
-			var NUI_DATE_LANGUAGE = {
-    days: 'Day',
-    hours: 'Hour',
-    minutes: 'Minute',
-    seconds: 'Second',
-    pluralLetter: 's'
-}
-        }
-	</script>
+    var NUI_DATE_LANGUAGE = {
+        days: 'Day',
+        hours: 'Hour',
+        minutes: 'Minute',
+        seconds: 'Second',
+        pluralLetter: 's'
+    }
+</script>
 
 	</head>
 	<body>
@@ -113,7 +111,7 @@
 	<!-- Main -->
 	<script src="js/main.js"></script>
 <script>
-NUI_DATE_LANGUAGE.seconds = 'Hour';
+NUI_DATE_LANGUAGE.seconds = 'Second';
 
 function getFormattedDate() {
     var date = new Date();
