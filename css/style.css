@@ -268,17 +268,7 @@ h1, h2, h3, h4, h5, h6, figure {
     font-size: 22px;
     font-weight: bold;
 }
-@keyframes fly {
-    from{
-        transform: translateY(0);
-        opacity:1;
-    }
 
-    to{
-        transform: translateY(-100vh);
-        opacity:0;
-    }
-}
 #fh5co-main-content {
     background: linear-gradient(
         135deg,
@@ -337,4 +327,15 @@ h1, h2, h3, h4, h5, h6, figure {
     user-select: text;
     z-index: 9999;
     position: relative;
+}
+@keyframes fly {
+    from{
+        transform: translateY(0);
+        opacity:1;
+    }
+
+    to{
+        transform: translateY(-100vh);
+        opacity:0;
+    }
 }
