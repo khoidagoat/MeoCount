@@ -83,7 +83,26 @@
 									<p class="love-text">
     Today is <span id="nuitime"></span>
 </p>
+<div class="love-letter">
 
+<h2>💌 Gửi lời nhắn cho Bíp</h2>
+
+<textarea id="message"
+placeholder="Viết gì đó cho Bíp ❤️"></textarea>
+
+<button onclick="sendMessage()">
+Gửi ❤️
+</button>
+
+
+<h3>💌 Lời nhắn của Meo:</h3>
+
+<p id="showMessage">
+Chưa có lời nhắn nào...
+</p>
+
+
+</div>
     <div class="love-message">
     <p>
        Đây là web đếm thời gian kể từ lần đầu tui gặp bạn, ngày mà tui gặp người dễ thương ơi là dễ thương (also lowkey evil) .<br> Đó là một chiều nắng nóng (thật ra gần như tuần nào cx vậy) trong lp tnvl cùng vs khôn làng, qanh và mr.đạt. Ngay từ đầu Bíp đã để ý Meo và Meo luôn làm Bíp nervous mỗi khi ngồi gần khiến Bíp phải nonchalant.<br> Thật sự thì lúc đó Bíp đã không baog nghĩ Bíp sẽ tiếp xúc vs Meo ntn bây giờ, Bíp thật sự rất hạnh phúc vì thời gian và công sức Meo đã bỏ ra cho Bíp.
@@ -239,6 +258,76 @@ function changePhoto(){
 
 setInterval(changePhoto,5000);
 
+
+</script>
+	<script type="module">
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+
+import { 
+getDatabase,
+ref,
+set,
+get
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
+
+
+const firebaseConfig = {
+  apiKey: "AIzaSyBdmO3__vk-OYr14ISumFYKryD28jjpsZo",
+  authDomain: "message4bip.firebaseapp.com",
+  databaseURL: "https://message4bip-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "message4bip",
+  storageBucket: "message4bip.firebasestorage.app",
+  messagingSenderId: "783169759821",
+  appId: "1:783169759821:web:c25cee92e61b7cc7660a04"
+};
+
+
+const app = initializeApp(firebaseConfig);
+
+const db = getDatabase(app);
+
+
+// Gửi lời nhắn
+window.sendMessage = function(){
+
+    let message = document.getElementById("message").value;
+
+
+    if(message.trim() === ""){
+        alert("Hãy viết lời nhắn cho Bíp ❤️");
+        return;
+    }
+
+
+    set(ref(db,"loveMessage"),{
+
+        text: message,
+        time: new Date().toLocaleString()
+
+    });
+
+
+    alert("Đã gửi lời nhắn ❤️");
+
+    document.getElementById("message").value="";
+
+}
+
+
+
+// Hiện lời nhắn
+get(ref(db,"loveMessage"))
+.then((snapshot)=>{
+
+    if(snapshot.exists()){
+
+        document.getElementById("showMessage").innerHTML =
+        snapshot.val().text;
+
+    }
+
+});
 
 </script>
 	</body>
