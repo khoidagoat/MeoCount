@@ -332,3 +332,9 @@ h1, h2, h3, h4, h5, h6, figure {
 
 }
 /*# sourceMappingURL=style.css.map */
+#message {
+    pointer-events: auto;
+    user-select: text;
+    z-index: 9999;
+    position: relative;
+}
