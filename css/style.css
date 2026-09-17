@@ -348,3 +348,49 @@ textarea {
     position: relative;
     z-index: 100;
 }
+/* Love message box */
+
+.message-title {
+    color: #ff5c9a;
+    font-size: 32px;
+    font-weight: 800;
+    margin-top: 30px;
+}
+
+
+.message-card {
+    background: rgba(255,255,255,0.85);
+    padding: 25px 30px;
+    margin-top: 20px;
+
+    border-radius: 25px;
+
+    color: #ff5c9a;
+
+    font-size: 24px;
+    font-weight: 600;
+
+    line-height: 1.6;
+
+    box-shadow: 
+        0 10px 25px rgba(255,92,154,0.25);
+
+    border: 2px solid rgba(255,150,190,0.4);
+
+    animation: messageAppear 1s ease;
+}
+
+
+@keyframes messageAppear {
+
+    from {
+        opacity:0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity:1;
+        transform: translateY(0);
+    }
+
+}
