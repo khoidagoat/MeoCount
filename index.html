@@ -178,26 +178,26 @@ setInterval(nuitick, 1000);
 nuitick();
 </script>
 		<script>
-function createHeart(){
+function createHeart() {
     const heart = document.createElement("div");
     heart.innerHTML = "❤️";
 
     heart.style.position = "fixed";
-    heart.style.left = Math.random()*100 + "vw";
-    heart.style.bottom = "0px";
-    heart.style.fontSize = "30px";
-  heart.style.zIndex = "20";
-heart.style.pointerEvents = "none";
-    heart.style.animation = "fly 5s linear";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.bottom = "20px";
+    heart.style.fontSize = "40px";
+    heart.style.zIndex = "9999";
+    heart.style.pointerEvents = "none";
+    heart.style.animation = "fly 4s linear forwards";
 
     document.body.appendChild(heart);
 
-    setTimeout(()=>{
+    setTimeout(() => {
         heart.remove();
-    },5000);
+    }, 4000);
 }
 
-setInterval(createHeart,800);
+setInterval(createHeart, 800);
 </script>
 <script>
 
