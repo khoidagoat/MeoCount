@@ -594,17 +594,25 @@ textarea {
 
     position:fixed;
 
-    right:30px;
-    bottom:30px;
+    right:50px;
+    bottom:40px;
 
     z-index:9999;
 
     display:flex;
 
-    gap:10px;
+    align-items:center;
+
+    justify-content:center;
+
+    gap:12px;
 
 }
+#musicControl button{
 
+    flex-shrink:0;
+
+}
 
 #musicControl button{
 
