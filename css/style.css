@@ -585,3 +585,32 @@ textarea {
     transform:scale(1.08);
 
 }
+#musicBtn{
+
+    position:fixed;
+    right:30px;
+    bottom:30px;
+
+    z-index:9999;
+
+    background:#ff5c9a;
+    color:white;
+
+    border:none;
+    border-radius:30px;
+
+    padding:12px 25px;
+
+    font-size:18px;
+
+    cursor:pointer;
+
+    box-shadow:
+    0 5px 15px rgba(255,92,154,0.3);
+
+}
+
+
+#musicBtn:hover{
+    transform:scale(1.1);
+}
