@@ -667,3 +667,123 @@ textarea {
     transform:translateX(1px);
 
 }
+#opening{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100vh;
+
+    background:
+    linear-gradient(
+        135deg,
+        #ffd6e7,
+        #fff5fa
+    );
+
+    z-index:99999;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+
+
+.letter-box{
+
+    background:white;
+
+    width:400px;
+
+    padding:50px;
+
+    border-radius:30px;
+
+    text-align:center;
+
+
+    box-shadow:
+    0 15px 40px rgba(255,92,154,0.25);
+
+}
+
+
+
+.letter-icon{
+
+    font-size:70px;
+
+    animation:
+    float 2s infinite;
+
+}
+
+
+
+.letter-box h1{
+
+    color:#ff5c9a;
+
+    font-size:35px;
+
+}
+
+
+
+.letter-box p{
+
+    font-size:20px;
+
+    color:#777;
+
+}
+
+
+
+#openBtn{
+
+    margin-top:25px;
+
+    padding:15px 40px;
+
+    border:none;
+
+    border-radius:40px;
+
+    background:#ff5c9a;
+
+    color:white;
+
+    font-size:20px;
+
+    cursor:pointer;
+
+}
+
+
+
+#openBtn:hover{
+
+    transform:scale(1.1);
+
+}
+
+
+
+@keyframes float{
+
+    50%{
+
+        transform:
+        translateY(-10px);
+
+    }
+
+}
