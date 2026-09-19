@@ -59,6 +59,34 @@
 
 	</head>
 	<body>
+		<div id="opening">
+
+    <div class="letter-box">
+
+        <div class="letter-icon">
+            💌
+        </div>
+
+
+        <h1>
+            You have a letter
+        </h1>
+
+
+        <p>
+            Một món quà nhỏ<br>
+            từ Bíp dành cho Meo ❤️
+        </p>
+
+
+        <button id="openBtn">
+            Open 💕
+        </button>
+
+
+    </div>
+
+</div>
 		<audio id="bgMusic"></audio>
 
 
@@ -520,6 +548,34 @@ prevBtn.onclick=function(){
 music.onended=function(){
 
     nextBtn.click();
+
+};
+
+</script>
+		<script>
+
+const openBtn =
+document.getElementById("openBtn");
+
+
+const opening =
+document.getElementById("opening");
+
+
+openBtn.onclick=function(){
+
+    opening.style.opacity="0";
+
+
+    setTimeout(()=>{
+
+        opening.style.display="none";
+
+    },800);
+
+
+    // bật nhạc nếu muốn
+    //music.play();
 
 };
 
