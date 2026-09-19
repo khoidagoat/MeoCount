@@ -70,7 +70,7 @@
 
 
 <button id="musicBtn">
-    ▶️
+    <span class="play-icon">▶</span>
 </button>
 
 
@@ -430,8 +430,7 @@ musicBtn.onclick = function(){
 
         music.play();
 
-        musicBtn.innerHTML =
-"⏸️";
+        document.getElementById("musicIcon").innerHTML = "Ⅱ";
 
         playing=true;
 
@@ -442,8 +441,7 @@ musicBtn.onclick = function(){
 
         music.pause();
 
-        musicBtn.innerHTML =
-"▶️";
+       document.getElementById("musicIcon").innerHTML = "▶";
 
         playing=false;
 
