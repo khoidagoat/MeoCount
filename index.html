@@ -389,32 +389,139 @@ const musicBtn =
 document.getElementById("musicBtn");
 
 
+const nextBtn =
+document.getElementById("nextBtn");
+
+
+const prevBtn =
+document.getElementById("prevBtn");
+
+
+
+const songs = [
+
+    "music/song1.mp3",
+
+    "music/song2.mp3",
+
+    "music/song3.mp3",
+
+    "music/song4.mp3"
+
+];
+
+
+let currentSong = 0;
+
 let playing = false;
 
 
+
+music.src = songs[currentSong];
+
+music.volume = 0.25;
+
+
+
 musicBtn.onclick = function(){
+
 
     if(!playing){
 
         music.play();
 
         musicBtn.innerHTML =
-        "🎵 Music OFF";
+        "⏸️ Pause";
 
-        playing = true;
+        playing=true;
 
     }
+
 
     else{
 
         music.pause();
 
         musicBtn.innerHTML =
-        "🎵 Music ON";
+        "🎵 Play";
 
-        playing = false;
+        playing=false;
 
     }
+
+};
+
+
+
+nextBtn.onclick=function(){
+
+
+    currentSong++;
+
+
+    if(currentSong >= songs.length){
+
+        currentSong=0;
+
+    }
+
+
+    music.src =
+    songs[currentSong];
+
+
+    music.play();
+
+
+    playing=true;
+
+
+    musicBtn.innerHTML =
+    "⏸️ Pause";
+
+
+};
+
+
+
+prevBtn.onclick=function(){
+
+
+    currentSong--;
+
+
+    if(currentSong < 0){
+
+        currentSong =
+        songs.length-1;
+
+    }
+
+
+    music.src =
+    songs[currentSong];
+
+
+    music.play();
+
+
+    playing=true;
+
+
+    musicBtn.innerHTML =
+    "⏸️ Pause";
+
+
+
+};
+
+
+
+// hết bài tự chuyển
+
+music.onended=function(){
+
+    nextBtn.click();
 
 };
 
