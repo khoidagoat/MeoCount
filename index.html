@@ -242,22 +242,33 @@ const title = document.getElementById("photo-title");
 
 function changePhoto(){
 
-    index++;
-
-    if(index >= memories.length){
-        index = 0;
-    }
+    aside.style.opacity = 0;
 
 
-    aside.style.backgroundImage =
+    setTimeout(()=>{
+
+        index++;
+
+        if(index >= memories.length){
+            index = 0;
+        }
+
+
+        aside.style.backgroundImage =
         `url(${memories[index].img})`;
 
-    title.innerHTML = memories[index].text;
+
+        title.innerHTML = memories[index].text;
+
+
+        aside.style.opacity = 1;
+
+
+    },1000);
 
 }
 
-
-setInterval(changePhoto,5000);
+setInterval(changePhoto,7000);
 
 
 </script>
