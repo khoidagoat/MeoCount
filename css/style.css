@@ -397,3 +397,24 @@ textarea {
 .message-card {
     font-family: 'Dancing Script', cursive;
 }
+/* Photo transition effect */
+
+#fh5co-aside {
+    background-size: cover;
+    background-position: center;
+    transition: opacity 1s ease-in-out;
+    animation: zoomPhoto 5s ease-in-out infinite;
+}
+
+
+@keyframes zoomPhoto {
+
+    from {
+        background-size: 100%;
+    }
+
+    to {
+        background-size: 110%;
+    }
+
+}
