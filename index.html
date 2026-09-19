@@ -59,6 +59,13 @@
 
 	</head>
 	<body>
+		<audio id="bgMusic" loop>
+    <source src="music/song1.mp3" type="audio/mpeg">
+</audio>
+
+<button id="musicBtn">
+    🎵 Music ON
+</button>
 	<div class="fh5co-loader"></div>
 
 	<aside id="fh5co-aside" role="sidebar" class="text-center">
@@ -357,6 +364,46 @@ get(ref(db,"loveMessage"))
     }
 
 });
+
+</script>
+		<script>
+
+const music =
+document.getElementById("bgMusic");
+
+
+const musicBtn =
+document.getElementById("musicBtn");
+
+
+let playing = false;
+
+
+musicBtn.onclick = function(){
+
+    if(!playing){
+
+        music.play();
+
+        musicBtn.innerHTML =
+        "🎵 Music OFF";
+
+        playing = true;
+
+    }
+
+    else{
+
+        music.pause();
+
+        musicBtn.innerHTML =
+        "🎵 Music ON";
+
+        playing = false;
+
+    }
+
+};
 
 </script>
 	</body>
