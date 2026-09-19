@@ -594,8 +594,8 @@ textarea {
 
     position:fixed;
 
-    right:50px;
-    bottom:40px;
+    right:70px;
+    bottom:50px;
 
     z-index:9999;
 
@@ -603,9 +603,7 @@ textarea {
 
     align-items:center;
 
-    justify-content:center;
-
-    gap:12px;
+    gap:15px;
 
 }
 #musicControl button{
@@ -637,7 +635,9 @@ textarea {
 
 }
 
-
+#musicControl{
+    width:max-content;
+}
 #musicControl button:hover{
 
     transform:scale(1.1);
