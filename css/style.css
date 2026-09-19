@@ -418,3 +418,170 @@ textarea {
     }
 
 }
+/* Love letter */
+
+.letter-wrapper{
+    margin-top:40px;
+}
+
+
+.message-title{
+
+    color:#ff5c9a;
+    font-size:32px;
+    font-weight:800;
+
+}
+
+
+.message-card{
+
+    position:relative;
+
+    background:
+    linear-gradient(
+        135deg,
+        #fff,
+        #fff5fa
+    );
+
+
+    padding:35px;
+
+    margin-top:25px;
+
+    border-radius:25px;
+
+
+    font-family:'Dancing Script', cursive;
+
+    font-size:32px;
+
+    color:#ff5c9a;
+
+
+    line-height:1.7;
+
+
+    box-shadow:
+    0 15px 35px
+    rgba(255,92,154,0.25);
+
+
+    border:
+    2px solid
+    rgba(255,150,190,0.4);
+
+
+    animation:
+    letterAppear 1s ease;
+
+}
+
+
+.quote{
+
+    font-size:60px;
+
+    font-weight:bold;
+
+}
+
+
+.letter-date{
+
+    margin-top:25px;
+
+    text-align:right;
+
+    font-size:22px;
+
+    font-family:
+    'Open Sans',
+    sans-serif;
+
+    color:#aaa;
+
+}
+
+
+
+@keyframes letterAppear{
+
+    from{
+
+        opacity:0;
+
+        transform:
+        translateY(30px);
+
+    }
+
+
+    to{
+
+        opacity:1;
+
+        transform:
+        translateY(0);
+
+    }
+
+}
+#message{
+
+    width:100%;
+
+    border-radius:20px;
+
+    padding:20px;
+
+    font-size:20px;
+
+    border:
+    2px solid #ffc1d9;
+
+    outline:none;
+
+}
+
+
+#message:focus{
+
+    border-color:#ff5c9a;
+
+    box-shadow:
+    0 0 15px
+    rgba(255,92,154,0.3);
+
+}
+
+
+.love-letter button{
+
+    margin-top:15px;
+
+    background:#ff5c9a;
+
+    color:white;
+
+    border:none;
+
+    border-radius:20px;
+
+    padding:12px 30px;
+
+    font-size:20px;
+
+    cursor:pointer;
+
+    transition:0.3s;
+
+}
+
+
+.love-letter button:hover{
+
+    transform:scale(1.08);
+
+}
