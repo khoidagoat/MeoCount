@@ -787,3 +787,65 @@ textarea {
     }
 
 }
+/* MUSIC PLAYER */
+
+#musicControl{
+
+    position:fixed;
+
+    right:40px;
+
+    bottom:40px;
+
+    z-index:9999;
+
+    display:flex;
+
+    gap:12px;
+
+}
+
+
+#musicControl button{
+
+    width:50px;
+
+    height:50px;
+
+
+    border-radius:50%;
+
+
+    border:none;
+
+
+    background:#ff5c9a;
+
+
+    color:white;
+
+
+    font-size:20px;
+
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+
+    cursor:pointer;
+
+
+    box-shadow:
+    0 5px 15px rgba(255,92,154,0.3);
+
+}
+
+
+#musicControl button:hover{
+
+    transform:scale(1.1);
+
+}
