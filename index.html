@@ -422,6 +422,26 @@ get(ref(db,"loveMessage"))
     </button>
 
 </div>
+		<script>
+
+const openBtn = document.getElementById("openBtn");
+const opening = document.getElementById("opening");
+
+
+openBtn.onclick = function(){
+
+    opening.style.opacity = "0";
+
+
+    setTimeout(()=>{
+
+        opening.style.display = "none";
+
+    },800);
+
+};
+
+</script>
 </body>
 </html>
 
