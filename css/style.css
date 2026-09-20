@@ -718,10 +718,31 @@ textarea {
 
 .letter-icon{
 
-    font-size:70px;
+font-size:80px;
 
-    animation:
-    float 2s infinite;
+animation:
+float 2.5s ease-in-out infinite;
+
+}
+
+
+
+@keyframes float{
+
+0%,100%{
+
+transform:
+translateY(0);
+
+}
+
+
+50%{
+
+transform:
+translateY(-15px);
+
+}
 
 }
 
@@ -766,7 +787,22 @@ textarea {
     cursor:pointer;
 
 }
+#openBtn{
 
+    animation:pulse 2s infinite;
+
+}
+
+
+@keyframes pulse{
+
+    50%{
+
+        transform:scale(1.08);
+
+    }
+
+}
 
 
 #openBtn:hover{
@@ -847,5 +883,43 @@ textarea {
 #musicControl button:hover{
 
     transform:scale(1.1);
+
+}
+#opening{
+
+    background:
+    linear-gradient(
+        120deg,
+        #ffd6e7,
+        #fff5fb,
+        #ffd6e7
+    );
+
+    background-size:300% 300%;
+
+    animation:
+    bgMove 8s infinite alternate;
+
+}
+
+
+@keyframes bgMove{
+
+    from{
+
+        background-position:left;
+
+    }
+
+    to{
+
+        background-position:right;
+
+    }
+
+}
+#opening{
+
+    transition:1s ease;
 
 }
