@@ -442,6 +442,203 @@ openBtn.onclick = function(){
 };
 
 </script>
+		<script>
+
+const songs = [
+
+    "music/song1.mp3",
+    "music/song2.mp3",
+    "music/song3.mp3",
+    "music/song4.mp3"
+
+];
+
+
+let currentSong = 0;
+
+
+const music = document.getElementById("bgMusic");
+
+const musicBtn = document.getElementById("musicBtn");
+
+const nextBtn = document.getElementById("nextBtn");
+
+const prevBtn = document.getElementById("prevBtn");
+
+const muteBtn = document.getElementById("muteBtn");
+
+
+
+music.src = songs[currentSong];
+
+music.volume = 0.3;
+
+
+
+// ===== OPENING + AUTO PLAY =====
+
+document.getElementById("openBtn").onclick = function(){
+
+
+    const opening =
+    document.getElementById("opening");
+
+
+    opening.style.opacity = "0";
+
+
+    setTimeout(()=>{
+
+        opening.style.display="none";
+
+    },800);
+
+
+
+    music.play()
+    .then(()=>{
+
+        musicBtn.innerHTML="⏸";
+
+    })
+    .catch(err=>{
+
+        console.log(err);
+
+    });
+
+
+};
+
+
+
+
+// ===== PLAY / PAUSE =====
+
+musicBtn.onclick=function(){
+
+
+    if(music.paused){
+
+
+        music.play();
+
+
+        musicBtn.innerHTML="⏸";
+
+
+    }
+
+    else{
+
+
+        music.pause();
+
+
+        musicBtn.innerHTML="▶";
+
+
+    }
+
+
+};
+
+
+
+
+// ===== NEXT SONG =====
+
+nextBtn.onclick=function(){
+
+
+    currentSong++;
+
+
+    if(currentSong >= songs.length){
+
+        currentSong=0;
+
+    }
+
+
+    music.src=songs[currentSong];
+
+    music.play();
+
+
+    musicBtn.innerHTML="⏸";
+
+
+};
+
+
+
+
+// ===== PREVIOUS SONG =====
+
+prevBtn.onclick=function(){
+
+
+    currentSong--;
+
+
+    if(currentSong < 0){
+
+        currentSong=songs.length-1;
+
+    }
+
+
+    music.src=songs[currentSong];
+
+    music.play();
+
+
+    musicBtn.innerHTML="⏸";
+
+
+};
+
+
+
+
+// ===== MUTE =====
+
+muteBtn.onclick=function(){
+
+
+    music.muted = !music.muted;
+
+
+
+    if(music.muted){
+
+        muteBtn.innerHTML="🔇";
+
+    }
+
+    else{
+
+        muteBtn.innerHTML="🔊";
+
+    }
+
+
+};
+
+
+
+
+// ===== AUTO NEXT WHEN END =====
+
+music.onended=function(){
+
+    nextBtn.click();
+
+};
+
+
+</script>
 </body>
 </html>
 
