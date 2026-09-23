@@ -923,3 +923,113 @@ translateY(-15px);
     transition:1s ease;
 
 }
+#burst-hearts{
+
+    position:absolute;
+
+    top:50%;
+    left:50%;
+
+    transform:translate(-50%,-50%);
+
+    pointer-events:none;
+
+}
+
+
+#burst-hearts span{
+
+    position:absolute;
+
+    font-size:35px;
+
+    opacity:0;
+
+}
+
+
+
+#burst-hearts span:nth-child(1){
+
+    animation:none;
+
+}
+
+
+@keyframes burst1{
+
+    from{
+
+        transform:translate(0,0);
+        opacity:1;
+
+    }
+
+    to{
+
+        transform:translate(-120px,-150px);
+        opacity:0;
+
+    }
+
+}
+
+
+
+@keyframes burst2{
+
+    from{
+
+        transform:translate(0,0);
+        opacity:1;
+
+    }
+
+    to{
+
+        transform:translate(120px,-120px);
+        opacity:0;
+
+    }
+
+}
+
+
+
+@keyframes burst3{
+
+    from{
+
+        transform:translate(0,0);
+        opacity:1;
+
+    }
+
+    to{
+
+        transform:translate(-80px,100px);
+        opacity:0;
+
+    }
+
+}
+
+
+
+@keyframes burst4{
+
+    from{
+
+        transform:translate(0,0);
+        opacity:1;
+
+    }
+
+    to{
+
+        transform:translate(100px,80px);
+        opacity:0;
+
+    }
+
+}
