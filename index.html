@@ -62,7 +62,15 @@
 		<div id="opening">
 
     <div class="letter-box">
+<div id="burst-hearts">
 
+    <span>❤️</span>
+    <span>💕</span>
+    <span>💖</span>
+    <span>❤️</span>
+    <span>✨</span>
+
+</div>
         <div class="letter-icon">
             💌
         </div>
@@ -429,7 +437,15 @@ const opening = document.getElementById("opening");
 
 
 openBtn.onclick = function(){
+const hearts =
+document.querySelectorAll("#burst-hearts span");
 
+
+hearts[0].style.animation="burst1 1s forwards";
+hearts[1].style.animation="burst2 1s forwards";
+hearts[2].style.animation="burst3 1s forwards";
+hearts[3].style.animation="burst4 1s forwards";
+hearts[4].style.animation="burst2 1s forwards";
    opening.style.transform="scale(1.1)";
 opening.style.opacity="0";
 
